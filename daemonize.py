@@ -53,5 +53,24 @@ def daemon(nochdir = False, noclose = False):
     if not noclose: redirect_fds()
 
 if __name__ == '__main__':
+    def die(error):
+        sys.stderr.write("%s\n" % error)
+        sys.exit(1)
+
+    if len(sys.argv) < 2:
+        die("Usage: %s [full-path] [args]\n" % sys.argv[0])
+
+    if sys.argv[1][0] != "/":
+        die("The 'path' parameter must be an absolute path name.")
+
+    if not os.path.exists(sys.argv[1]):
+        die("File \"%s\" does not exist." % sys.argv[1])
+
+    if not os.path.isfile(sys.argv[1]):
+        die("File \"%s\" is not regular file." % sys.argv[1])
+
+    if not os.access(sys.argv[1], os.X_OK):
+        die("File \"%s\" is not executable." % sys.argv[1])
+
     daemon(0,0)
     os.execv(sys.argv[1], sys.argv[2:])
