@@ -73,4 +73,4 @@ if __name__ == '__main__':
         die("File \"%s\" is not executable." % sys.argv[1])
 
     daemon(0,0)
-    os.execv(sys.argv[1], sys.argv[2:])
+    os.execv(sys.argv[1], sys.argv[1:])
