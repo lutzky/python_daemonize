@@ -1,0 +1,10 @@
+setup.cfg
+setup.py
+python_daemonize/__init__.py
+python_daemonize/daemonize.py
+python_daemonize.egg-info/PKG-INFO
+python_daemonize.egg-info/SOURCES.txt
+python_daemonize.egg-info/dependency_links.txt
+python_daemonize.egg-info/entry_points.txt
+python_daemonize.egg-info/not-zip-safe
+python_daemonize.egg-info/top_level.txt

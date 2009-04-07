@@ -1,0 +1,3 @@
+[console_scripts]
+daemonize = python_daemonize.daemonize:main
+

@@ -52,7 +52,7 @@ def daemon(nochdir = False, noclose = False):
     if not nochdir: os.chdir("/")
     if not noclose: redirect_fds()
 
-if __name__ == '__main__':
+def main():
     def die(error):
         sys.stderr.write("%s\n" % error)
         sys.exit(1)
@@ -74,3 +74,6 @@ if __name__ == '__main__':
 
     daemon(0,0)
     os.execv(sys.argv[1], sys.argv[1:])
+
+if __name__ == '__main__':
+    main()
